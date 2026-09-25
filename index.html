@@ -436,7 +436,7 @@
     <section>
       <div class="wrap">
         <p class="eyebrow">Active pipelines</p>
-        <p class="leadin">Six running data pipelines &mdash; each one collects a live signal on a schedule and turns it into a report or a site.</p>
+        <p class="leadin">Eight running data pipelines &mdash; each one collects a live signal on a schedule and turns it into a report or a site.</p>
         <div class="plist">
           <div class="prow">
             <span class="prow-name">data-catalog</span>
@@ -461,6 +461,14 @@
           <div class="prow">
             <span class="prow-name">HamburgTrainDelays</span>
             <span class="prow-desc">Polls the Deutsche Bahn API every 15 minutes to track live train delays at Hamburg Hbf.</span>
+          </div>
+          <div class="prow">
+            <span class="prow-name">OpenSkyFlightTracker</span>
+            <span class="prow-desc">Every aircraft worldwide, every five minutes &mdash; Azure Functions into Azure Blob Storage. <span class="status-tag">collecting</span></span>
+          </div>
+          <div class="prow">
+            <span class="prow-name">AISShipTracker</span>
+            <span class="prow-desc">Live AIS ship positions worldwide, sampled every five minutes on Azure. <span class="status-tag">collecting</span></span>
           </div>
         </div>
         <p style="margin-top:26px;"><a class="tablink" href="#pipelines" data-nav="pipelines">See the active pipelines in detail</a></p>
@@ -550,6 +558,28 @@
             <div class="links"><a href="https://github.com/vulevu228/HamburgTrainDelays">github.com/vulevu228/HamburgTrainDelays &rarr;</a></div>
           </article>
 
+          <article>
+            <div class="proj-head">
+              <span class="proj-name">OpenSkyFlightTracker</span>
+              <span class="pill">Collecting data</span>
+            </div>
+            <p class="watch">Every aircraft in the sky, worldwide, every five minutes</p>
+            <p class="desc">An Azure Functions timer authenticates to the OpenSky Network with OAuth2 and saves a global snapshot of 10,000+ aircraft every five minutes. Raw positions land in daily files in Azure Blob Storage, next to a compact per-country summary built for Power BI. Retries ride out API hiccups, and Application Insights emails an alert if a run ever fails.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span><span class="chip">Application Insights</span><span class="chip">OAuth2</span></div>
+            <div class="links"><span style="color: var(--ink-faint);">Repository private while data collects &middot; dashboard to follow</span></div>
+          </article>
+
+          <article>
+            <div class="proj-head">
+              <span class="proj-name">AISShipTracker</span>
+              <span class="pill">Collecting data</span>
+            </div>
+            <p class="watch">Ships at sea around the world, sampled every five minutes</p>
+            <p class="desc">An Azure Function opens a live AIS stream every five minutes, listens for a minute and keeps the latest position of every vessel it hears &mdash; about 7,000 ships per window &mdash; along with ship details such as type, destination and size. Daily files in Azure Blob Storage, with a per-window summary for Power BI.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">WebSockets</span><span class="chip">asyncio</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span></div>
+            <div class="links"><span style="color: var(--ink-faint);">Repository private while data collects &middot; dashboard to follow</span></div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -561,7 +591,7 @@
         <div class="plist">
           <div class="prow">
             <span class="prow-name"><a href="https://github.com/vulevu228/SpaceWeatherTracker">SpaceWeatherTracker</a></span>
-            <span class="prow-desc">NOAA solar-flare and geomagnetic-storm feeds into PostgreSQL and Power BI.</span>
+            <span class="prow-desc">NOAA solar flares, geomagnetic storms and 275 years of sunspots &mdash; PostgreSQL into a four-page Power BI dashboard.</span>
           </div>
           <div class="prow">
             <span class="prow-name"><a href="https://github.com/vulevu228/DataCentreEnergyDemand">DataCentreEnergyDemand</a></span>
