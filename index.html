@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1">
-<title>Emir Avni Sahin</title>
+<title>Lebenslauf &amp; Portfolio</title>
 <meta name="description" content="Emir Avni Sahin &mdash; Information Engineering student portfolio: data pipelines, business intelligence and automation.">
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>body{margin:0;padding:0}img{max-width:100%}</style></head><body>
@@ -489,7 +489,7 @@
             <dt>Location</dt><dd>Hamburg, Germany</dd>
             <dt>Study</dt><dd>BSc Information Engineering &middot; HAW Hamburg &middot; 6th semester from Oct 2026</dd>
             <dt>Focus</dt><dd>Pipelines &middot; Business Intelligence &middot; Automation</dd>
-            <dt>Live sites</dt><dd><a href="https://strompreis-planer.de">strompreis-planer.de</a> &middot; <a href="https://hamburgstudentjobs.de">hamburgstudentjobs.de</a></dd>
+            <dt>Live sites</dt><dd><a href="https://worldeventslive.de">worldeventslive.de</a> &middot; <a href="https://strompreis-planer.de">strompreis-planer.de</a> &middot; <a href="https://hamburgstudentjobs.de">hamburgstudentjobs.de</a></dd>
             <dt>Core stack</dt><dd>Python &middot; SQL &middot; Power BI &middot; Azure &middot; GitHub Actions</dd>
             <dt>Status</dt><dd><span class="dot"></span>Open to working-student &amp; internship roles</dd>
           </dl>
@@ -514,8 +514,14 @@
     <section>
       <div class="wrap">
         <p class="eyebrow">Live websites</p>
-        <p class="leadin">Two public sites running on my own pipelines, each with its own domain and a daily automated data refresh.</p>
+        <p class="leadin">Three public sites running on my own pipelines, each with its own domain and automated data refresh.</p>
         <div class="grid2">
+          <div class="mini">
+            <h3>World Events Live <span class="pill pill--live">Live site</span></h3>
+            <p>A live world map of war and conflict news: where fighting, strikes and protests are reported right now (GDELT, every 15 minutes), live air traffic around the hotspots, every deadly event since February 2022 from UCDP in a history mode, and what forecasters expect next. 12 languages.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Azure Functions</span><span class="chip">Cloudflare Workers</span><span class="chip">MapLibre GL</span><span class="chip">GDELT</span><span class="chip">UCDP</span></div>
+            <div class="links"><a href="https://worldeventslive.de">worldeventslive.de</a></div>
+          </div>
           <div class="mini">
             <h3>Strompreis-Planer <span class="pill pill--live">Live site</span></h3>
             <p>When is electricity cheapest in Germany? Day-ahead prices in 15-minute steps, an appliance planner that finds the cheapest start time, a 30-day price heatmap and an animated Europe price map. German / English.</p>
@@ -524,7 +530,7 @@
           </div>
           <div class="mini">
             <h3>Hamburg Student Jobs <span class="pill pill--live">Live site</span></h3>
-            <p>Every Werkstudent, internship and thesis job in Hamburg in one place &mdash; 1,700+ listings refreshed daily from the Federal Employment Agency and company career pages, filterable by how much German you really need, with daily email alerts.</p>
+            <p>Every Werkstudent, internship and thesis job in Hamburg in one place &mdash; 1,700+ listings refreshed daily from the Federal Employment Agency and company career pages, filterable by how much German you really need.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">GitHub Actions</span><span class="chip">Claude Haiku</span><span class="chip">JavaScript</span></div>
             <div class="links"><a href="https://hamburgstudentjobs.de">hamburgstudentjobs.de</a><a href="https://github.com/vulevu228/HamburgStudentJobs">source</a></div>
           </div>
@@ -534,19 +540,8 @@
 
     <section>
       <div class="wrap">
-        <p class="eyebrow">Next major project</p>
-        <div class="upcoming">
-          <h3>World Events Map <span class="pill pill--soon">Coming soon</span></h3>
-          <p>A live map of what is happening in the world right now. News events from GDELT are collected every 15 minutes, scored by severity (strikes, clashes, threats, protests) and shown as hotspots with their real headlines in English or German. Live aircraft and ship positions from my OpenSky and AIS pipelines sit on top. The whole thing runs serverless on Azure.</p>
-          <div class="chips"><span class="chip">Python</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span><span class="chip">Azure Translator</span><span class="chip">GDELT</span><span class="chip">Leaflet</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
         <p class="eyebrow">Active pipelines</p>
-        <p class="leadin">Eight running data pipelines &mdash; each one collects a live signal on a schedule and turns it into a report or a site.</p>
+        <p class="leadin">Six running data pipelines &mdash; each one collects a live signal on a schedule and turns it into a report or a site &mdash; plus two cloud collectors that have finished their collection run.</p>
         <div class="plist">
           <div class="prow">
             <span class="prow-name">data-catalog</span>
@@ -566,7 +561,7 @@
           </div>
           <div class="prow">
             <span class="prow-name">GermanWaterLevels</span>
-            <span class="prow-desc">Daily ETL from Germany's PegelOnline API &mdash; 29M+ rows of river and waterway gauge readings, feeding a Power BI hydrology report.</span>
+            <span class="prow-desc">Daily ETL from Germany's PegelOnline API &mdash; 42M+ rows of river and waterway gauge readings, feeding a Power BI hydrology report.</span>
           </div>
           <div class="prow">
             <span class="prow-name">HamburgTrainDelays</span>
@@ -574,11 +569,11 @@
           </div>
           <div class="prow">
             <span class="prow-name">OpenSkyFlightTracker</span>
-            <span class="prow-desc">Every aircraft worldwide, every five minutes &mdash; Azure Functions into Azure Blob Storage. <span class="status-tag">collecting</span></span>
+            <span class="prow-desc">Every aircraft worldwide, collected on Azure from 22 Sep to 10 Oct 2026 &mdash; dataset kept for a dashboard. <span class="status-tag">paused</span></span>
           </div>
           <div class="prow">
             <span class="prow-name">AISShipTracker</span>
-            <span class="prow-desc">Live AIS ship positions worldwide, sampled every five minutes on Azure. <span class="status-tag">collecting</span></span>
+            <span class="prow-desc">Worldwide AIS ship positions, sampled every five minutes on Azure for ten days &mdash; 2.7 GB kept for a dashboard. <span class="status-tag">paused</span></span>
           </div>
         </div>
         <p style="margin-top:26px;"><a class="tablink" href="#pipelines" data-nav="pipelines">See the active pipelines in detail</a></p>
@@ -588,7 +583,7 @@
     <section>
       <div class="wrap">
         <p class="eyebrow">Also built</p>
-        <p class="leadin">Two live websites, Power BI dashboards, a live data-source index, a full-stack 3D engine, and hardware.</p>
+        <p class="leadin">Three live websites, Power BI dashboards, a live data-source index, a full-stack 3D engine, and hardware.</p>
         <p><a class="tablink" href="#projects" data-nav="projects">Browse all projects</a></p>
       </div>
     </section>
@@ -652,7 +647,7 @@
               <span class="pill">Public repo</span>
             </div>
             <p class="watch">Germany's rivers and waterways, gauged nationwide, every day</p>
-            <p class="desc">A daily ETL against Germany's PegelOnline API has built up 29M+ rows of gauge readings across the country's river and waterway network, on an unattended Task Scheduler job. A Power BI hydrology report reads straight off the growing table.</p>
+            <p class="desc">A daily ETL against Germany's PegelOnline API has built up 42M+ rows of gauge readings across the country's river and waterway network, on an unattended Task Scheduler job. A Power BI hydrology report reads straight off the growing table.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">ETL</span><span class="chip">Power BI</span><span class="chip">Task Scheduler</span></div>
             <div class="links"><a href="https://github.com/vulevu228/GermanWaterLevels">github.com/vulevu228/GermanWaterLevels &rarr;</a></div>
           </article>
@@ -671,23 +666,23 @@
           <article>
             <div class="proj-head">
               <span class="proj-name">OpenSkyFlightTracker</span>
-              <span class="pill">Collecting data</span>
+              <span class="pill">Paused</span>
             </div>
-            <p class="watch">Every aircraft in the sky, worldwide, every five minutes</p>
-            <p class="desc">An Azure Functions timer authenticates to the OpenSky Network with OAuth2 and saves a global snapshot of 10,000+ aircraft every five minutes. Raw positions land in daily files in Azure Blob Storage, next to a compact per-country summary built for Power BI. Retries ride out API hiccups, and Application Insights emails an alert if a run ever fails.</p>
+            <p class="watch">Every aircraft in the sky, worldwide, 22 Sep &ndash; 10 Oct 2026</p>
+            <p class="desc">An Azure Functions timer authenticated to the OpenSky Network with OAuth2 and saved a global snapshot of 10,000+ aircraft every five to ten minutes. Raw positions landed in daily files in Azure Blob Storage next to a per-country summary for Power BI; an hourly step compressed older days (4.7&times; smaller) into the Cold tier to keep storage cheap. I stopped the collector to stay inside a $5 cloud budget &mdash; World Events Live now uses adsb.lol for live aircraft &mdash; and kept the dataset for the dashboard.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span><span class="chip">Application Insights</span><span class="chip">OAuth2</span></div>
-            <div class="links"><span style="color: var(--ink-faint);">Repository private while data collects &middot; dashboard to follow</span></div>
+            <div class="links"><span style="color: var(--ink-faint);">Repository private &middot; dashboard to follow</span></div>
           </article>
 
           <article>
             <div class="proj-head">
               <span class="proj-name">AISShipTracker</span>
-              <span class="pill">Collecting data</span>
+              <span class="pill">Paused</span>
             </div>
-            <p class="watch">Ships at sea around the world, sampled every five minutes</p>
-            <p class="desc">An Azure Function opens a live AIS stream every five minutes, listens for a minute and keeps the latest position of every vessel it hears &mdash; about 7,000 ships per window &mdash; along with ship details such as type, destination and size. Daily files in Azure Blob Storage, with a per-window summary for Power BI.</p>
+            <p class="watch">Ships at sea around the world, 25 Sep &ndash; 5 Oct 2026</p>
+            <p class="desc">An Azure Function opened a live AIS stream every five minutes, listened for a minute and kept the latest position of every vessel it heard &mdash; about 7,000 ships per window &mdash; along with ship details such as type, destination and size. Ten days of data (2.7 GB) are kept in Azure Blob Storage for a dashboard; the collector is stopped to save cloud costs.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">WebSockets</span><span class="chip">asyncio</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span></div>
-            <div class="links"><span style="color: var(--ink-faint);">Repository private while data collects &middot; dashboard to follow</span></div>
+            <div class="links"><span style="color: var(--ink-faint);">Repository private &middot; dashboard to follow</span></div>
           </article>
 
         </div>
@@ -699,6 +694,10 @@
         <p class="eyebrow">More pipelines &amp; dashboards</p>
         <p class="leadin">A few more, one line each &mdash; the rest of the BI builds and data pulls that didn't make the highlight cards above.</p>
         <div class="plist">
+          <div class="prow">
+            <span class="prow-name"><a href="https://vulevu228.github.io/AllNewsByEmir/">All News by Emir</a></span>
+            <span class="prow-desc">~130 RSS feeds every 15 minutes on GitHub Actions, sorted into topics and regions, with Claude Haiku daily briefings &mdash; published to GitHub Pages, no server.</span>
+          </div>
           <div class="prow">
             <span class="prow-name"><a href="https://github.com/vulevu228/SpaceWeatherTracker">SpaceWeatherTracker</a></span>
             <span class="prow-desc">NOAA solar flares, geomagnetic storms and 275 years of sunspots &mdash; PostgreSQL into a four-page Power BI dashboard.</span>
@@ -745,6 +744,13 @@
         <div class="grid2">
 
           <div class="mini">
+            <h3>World Events Live <span class="pill pill--live">Live site</span></h3>
+            <p>Live world map of war and conflict news with live air traffic, a history mode with every deadly event since 2022 (UCDP) and forecasters' outlooks. Serverless on Azure Functions behind a Cloudflare Worker; 12 languages.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Azure Functions</span><span class="chip">Cloudflare Workers</span><span class="chip">MapLibre GL</span><span class="chip">GDELT</span><span class="chip">UCDP</span></div>
+            <div class="links"><a href="https://worldeventslive.de">worldeventslive.de</a></div>
+          </div>
+
+          <div class="mini">
             <h3>Strompreis-Planer <span class="pill pill--live">Live site</span></h3>
             <p>German day-ahead electricity prices in 15-minute steps, an appliance planner for the cheapest start time and an animated Europe price map. Data refreshed by GitHub Actions; all maths in the browser.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">GitHub Actions</span><span class="chip">Chart.js</span></div>
@@ -753,7 +759,7 @@
 
           <div class="mini">
             <h3>Hamburg Student Jobs <span class="pill pill--live">Live site</span></h3>
-            <p>1,700+ Werkstudent, internship and thesis jobs in Hamburg, updated daily, filterable by German level, with daily email alerts. Claude Haiku reads the language requirements of each ad.</p>
+            <p>1,700+ Werkstudent, internship and thesis jobs in Hamburg, updated daily, filterable by German level. Claude Haiku reads the language requirements of each ad.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Claude Haiku</span><span class="chip">GitHub Actions</span></div>
             <div class="links"><a href="https://hamburgstudentjobs.de">hamburgstudentjobs.de</a><a href="https://github.com/vulevu228/HamburgStudentJobs">source</a></div>
           </div>
@@ -800,17 +806,6 @@
             <div class="links"><a href="https://astro-noir.onrender.com">astro-noir.onrender.com</a></div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <p class="eyebrow">In progress</p>
-        <div class="upcoming">
-          <h3>World Events Map <span class="pill pill--soon">Coming soon</span></h3>
-          <p>A live map of what is happening in the world right now. News events from GDELT are collected every 15 minutes, scored by severity (strikes, clashes, threats, protests) and shown as hotspots with their real headlines in English or German. Live aircraft and ship positions from my OpenSky and AIS pipelines sit on top. The whole thing runs serverless on Azure.</p>
-          <div class="chips"><span class="chip">Python</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span><span class="chip">Azure Translator</span><span class="chip">GDELT</span><span class="chip">Leaflet</span></div>
         </div>
       </div>
     </section>
