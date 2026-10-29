@@ -565,15 +565,15 @@
           </div>
           <div class="prow">
             <span class="prow-name">HamburgTrainDelays</span>
-            <span class="prow-desc">Polls the Deutsche Bahn API every 15 minutes to track live train delays at Hamburg Hbf.</span>
+            <span class="prow-desc">Polls the Deutsche Bahn API every 15 minutes to track live train delays at Hamburg Hbf, plus hvv data for Hamburg&rsquo;s local network through the hvv API (access granted by hvv) &mdash; collected on my own Raspberry Pi.</span>
           </div>
           <div class="prow">
             <span class="prow-name">OpenSkyFlightTracker</span>
-            <span class="prow-desc">Every aircraft worldwide, collected on Azure from 22 Sep to 10 Oct 2026 &mdash; dataset kept for a dashboard. <span class="status-tag">paused</span></span>
+            <span class="prow-desc">Every aircraft worldwide every five minutes, now collected 24/7 by my own Raspberry Pi (Azure history since 22 Sep 2026 kept). <span class="status-tag">collecting</span></span>
           </div>
           <div class="prow">
             <span class="prow-name">AISShipTracker</span>
-            <span class="prow-desc">Worldwide AIS ship positions, sampled every five minutes on Azure for ten days &mdash; 2.7 GB kept for a dashboard. <span class="status-tag">paused</span></span>
+            <span class="prow-desc">Worldwide AIS ship positions every five minutes, now collected 24/7 by my own Raspberry Pi (Azure history since 25 Sep 2026 kept). <span class="status-tag">collecting</span></span>
           </div>
         </div>
         <p style="margin-top:26px;"><a class="tablink" href="#pipelines" data-nav="pipelines">See the active pipelines in detail</a></p>
@@ -658,30 +658,30 @@
               <span class="pill">Public repo</span>
             </div>
             <p class="watch">Deutsche Bahn punctuality at Hamburg Hbf, polled live</p>
-            <p class="desc">Polls the Deutsche Bahn API every 15 minutes to track live train delays at Hamburg's main station, with pandas-based delay analysis on top. Built-in retry logic to ride out the API's occasional timeouts without losing a collection run.</p>
-            <div class="chips"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">GitHub Actions</span></div>
+            <p class="desc">Polls the Deutsche Bahn API every 15 minutes to track live train delays at Hamburg's main station, with pandas-based delay analysis on top. Built-in retry logic to ride out the API's occasional timeouts without losing a collection run. The collector runs 24/7 on my own Raspberry Pi, which also extracts hvv data for Hamburg&rsquo;s local public transport through the hvv API, with access granted by hvv.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">Raspberry Pi</span><span class="chip">systemd</span><span class="chip">GitHub Actions</span></div>
             <div class="links"><a href="https://github.com/vulevu228/HamburgTrainDelays">github.com/vulevu228/HamburgTrainDelays &rarr;</a></div>
           </article>
 
           <article>
             <div class="proj-head">
               <span class="proj-name">OpenSkyFlightTracker</span>
-              <span class="pill">Paused</span>
+              <span class="pill pill--live">Collecting 24/7</span>
             </div>
-            <p class="watch">Every aircraft in the sky, worldwide, 22 Sep &ndash; 10 Oct 2026</p>
-            <p class="desc">An Azure Functions timer authenticated to the OpenSky Network with OAuth2 and saved a global snapshot of 10,000+ aircraft every five to ten minutes. Raw positions landed in daily files in Azure Blob Storage next to a per-country summary for Power BI; an hourly step compressed older days (4.7&times; smaller) into the Cold tier to keep storage cheap. I stopped the collector to stay inside a $5 cloud budget &mdash; World Events Live now uses adsb.lol for live aircraft &mdash; and kept the dataset for the dashboard.</p>
-            <div class="chips"><span class="chip">Python</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span><span class="chip">Application Insights</span><span class="chip">OAuth2</span></div>
+            <p class="watch">Every aircraft in the sky, worldwide, since 22 Sep 2026</p>
+            <p class="desc">An Azure Functions timer authenticated to the OpenSky Network with OAuth2 and saved a global snapshot of 10,000+ aircraft every five to ten minutes. Raw positions landed in daily files in Azure Blob Storage next to a per-country summary for Power BI; an hourly step compressed older days (4.7&times; smaller) into the Cold tier to keep storage cheap. To stay inside a $5 cloud budget I moved the collector off Azure: since 29 Oct 2026 the data is extracted by my own Raspberry Pi 4 at home, every five minutes onto a USB SSD, and my laptop pulls a daily copy for the Polars, PostgreSQL and Power BI analysis.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Raspberry Pi</span><span class="chip">systemd</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span><span class="chip">Application Insights</span><span class="chip">OAuth2</span></div>
             <div class="links"><span style="color: var(--ink-faint);">Repository private &middot; dashboard to follow</span></div>
           </article>
 
           <article>
             <div class="proj-head">
               <span class="proj-name">AISShipTracker</span>
-              <span class="pill">Paused</span>
+              <span class="pill pill--live">Collecting 24/7</span>
             </div>
-            <p class="watch">Ships at sea around the world, 25 Sep &ndash; 5 Oct 2026</p>
-            <p class="desc">An Azure Function opened a live AIS stream every five minutes, listened for a minute and kept the latest position of every vessel it heard &mdash; about 7,000 ships per window &mdash; along with ship details such as type, destination and size. Ten days of data (2.7 GB) are kept in Azure Blob Storage for a dashboard; the collector is stopped to save cloud costs.</p>
-            <div class="chips"><span class="chip">Python</span><span class="chip">WebSockets</span><span class="chip">asyncio</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span></div>
+            <p class="watch">Ships at sea around the world, since 25 Sep 2026</p>
+            <p class="desc">An Azure Function opened a live AIS stream every five minutes, listened for a minute and kept the latest position of every vessel it heard &mdash; about 7,000 ships per window &mdash; along with ship details such as type, destination and size. The first ten days ran on Azure; to save cloud costs the collector now runs 24/7 on my own Raspberry Pi 4 at home, writing to a USB SSD, with a daily copy pulled to my laptop for analysis.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">WebSockets</span><span class="chip">asyncio</span><span class="chip">Raspberry Pi</span><span class="chip">Azure Functions</span><span class="chip">Blob Storage</span></div>
             <div class="links"><span style="color: var(--ink-faint);">Repository private &middot; dashboard to follow</span></div>
           </article>
 
@@ -946,7 +946,7 @@
         <div class="skills">
           <div class="skillgroup"><h3>Pipelines &amp; data</h3><p>Python, pandas, REST APIs, ETL, SQLite, PostgreSQL, web scraping, time-series forecasting (Prophet)</p></div>
           <div class="skillgroup"><h3>BI &amp; visualisation</h3><p>Power BI, DAX, Power Query, Excel (intermediate), matplotlib</p></div>
-          <div class="skillgroup"><h3>Infrastructure</h3><p>Git, GitHub Actions (scheduled CI), GitHub Pages, Azure Functions, Azure Blob Storage, Task Scheduler / cron automation, DBeaver, Azure Maps</p></div>
+          <div class="skillgroup"><h3>Infrastructure</h3><p>Git, GitHub Actions (scheduled CI), GitHub Pages, Azure Functions, Azure Blob Storage, Task Scheduler / cron automation, Raspberry Pi (Linux, systemd timers), DBeaver, Azure Maps</p></div>
           <div class="skillgroup"><h3>AI tools</h3><p>Claude Code for AI-assisted development, Claude API in production pipelines (Haiku, structured outputs)</p></div>
           <div class="skillgroup"><h3>Programming languages</h3><p>Python, SQL</p></div>
           <div class="skillgroup"><h3>Hardware</h3><p>Circuit assembly, soldering, LTspice, Arduino, signal debugging</p></div>
