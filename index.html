@@ -440,6 +440,7 @@
   }
   .upcoming h3 { font-size: 1.2rem; font-weight: 600; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 8px; }
   .upcoming p { margin: 0 0 14px; max-width: 62ch; }
+  .pill--private { color: var(--ink-soft, var(--ink)); border-color: var(--line); }
   .pill--soon { color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
 
   footer {
@@ -685,6 +686,17 @@
             <div class="links"><span style="color: var(--ink-faint);">Repository private &middot; dashboard to follow</span></div>
           </article>
 
+          <article>
+            <div class="proj-head">
+              <span class="proj-name">The Count Down</span>
+              <span class="pill pill--private">Private project</span>
+            </div>
+            <p class="watch">A personal conflict monitor for Russia&ndash;Ukraine and NATO&ndash;Russia tensions</p>
+            <p class="desc">An end-to-end ETL I built for my own use: collectors run 24/7 on my Raspberry Pi 4 under systemd timers, my laptop pulls the files twice a day, and an idempotent load builds a PostgreSQL warehouse (raw, reference, core, knowledge and mart schemas) from conflict-event, air-war and front-line sources. A custom MapLibre &ldquo;tactical&rdquo; map shows a day-by-day front-line time-lapse over 1,000+ days, computed with shapely, plus air-war analytics and every event classified by weapon type. It stays private on purpose: near-real-time strike locations are sensitive, so the project is not published.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">PostgreSQL</span><span class="chip">shapely</span><span class="chip">Raspberry Pi</span><span class="chip">systemd</span><span class="chip">MapLibre GL</span><span class="chip">ETL</span></div>
+            <div class="links"><span style="color: var(--ink-faint);">Private by design &middot; not published &middot; walkthrough on request</span></div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -748,6 +760,13 @@
             <p>Live world map of war and conflict news with live air traffic, a history mode with every deadly event since 2022 (UCDP) and forecasters' outlooks. Serverless on Azure Functions behind a Cloudflare Worker; 12 languages.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Azure Functions</span><span class="chip">Cloudflare Workers</span><span class="chip">MapLibre GL</span><span class="chip">GDELT</span><span class="chip">UCDP</span></div>
             <div class="links"><a href="https://worldeventslive.de">worldeventslive.de</a></div>
+          </div>
+
+          <div class="mini">
+            <h3>The Count Down <span class="pill pill--private">Private project</span></h3>
+            <p>My private conflict monitor (Russia&ndash;Ukraine, NATO): a Raspberry Pi collects around the clock into a PostgreSQL warehouse, and a tactical MapLibre map shows a daily front-line time-lapse and air-war analytics. Kept unpublished on purpose because the data is sensitive.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">PostgreSQL</span><span class="chip">Raspberry Pi</span><span class="chip">MapLibre GL</span></div>
+            <div class="links"><span style="color: var(--ink-faint);">Private by design &middot; walkthrough on request</span></div>
           </div>
 
           <div class="mini">
